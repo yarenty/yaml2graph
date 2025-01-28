@@ -1,0 +1,15 @@
+name: Test Configuration
+version: 1.0
+settings:
+  debug: true
+  timeout: 30
+servers:
+  - host: localhost
+    port: 8080
+    enabled: true
+  - host: example.com
+    port: 443
+    enabled: false
+dependencies:
+  database: postgres
+  cache: redis
