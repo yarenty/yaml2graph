@@ -5,6 +5,10 @@ use serde_yaml::Value;
 use std::collections::HashMap;
 use std::fs;
 
+
+/**
+ * Builds a graph from a YAML value.
+ */
 fn build_graph(value: &Value, graph: &mut Graph<String, String>, parent: Option<NodeIndex>, node_map: &mut HashMap<String, NodeIndex>) -> Result<NodeIndex> {
     match value {
         Value::Mapping(map) => {
@@ -79,6 +83,8 @@ fn build_graph(value: &Value, graph: &mut Graph<String, String>, parent: Option<
         }
     }
 }
+
+
 
 fn main() -> Result<()> {
     let args: Vec<String> = std::env::args().collect();
